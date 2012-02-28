@@ -1,0 +1,2 @@
+-record(tab, {name, id}).
+
