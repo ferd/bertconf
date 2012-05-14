@@ -6,9 +6,9 @@
 -include_lib("common_test/include/ct.hrl").
 -export([all/0, init_per_suite/1, end_per_suite/1,
          init_per_testcase/2, end_per_testcase/2]).
--export([access_table/1]).
+-export([access_table/1, all_data/1]).
 
-all() -> [access_table].
+all() -> [access_table, all_data].
 
 init_per_suite(Config) ->
     application:load({application, bertconf, []}),
@@ -39,3 +39,10 @@ access_table(_Config) ->
     Key = {728,90},
     {ok, [9881]} = bertconf:read(NameSpace,Key),
     undefined = bertconf:read(NameSpace,make_ref()).
+
+all_data(_Config) ->
+    [{9880, _},
+     {9881, _},
+     {14611, _},
+     {14612, _},
+     {14613, _}] = lists:sort(bertconf:all(placement)).
