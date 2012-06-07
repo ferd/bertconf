@@ -41,3 +41,6 @@ And then start the app. You should then be able to call it as follows:
         undefined -> undefined
     end.
 
+Since the tag 0.2.0, a new function call is added for users requiring to retrieve entire tables at once. Be aware that in large tables, this can be a bit challenging for the garbage collector, although items are retrieved from the table in batches of 500 to avoid gigantic fetches:
+
+    [H|T] = bertconf:all(NameSpace).
