@@ -36,7 +36,7 @@ end_per_testcase(_Name, _Config) ->
 %% found in a directory.
 %% Note: the expected behaviour is that config files are read once as part of the
 %% startup procedure.
-read_files_and_tables(Config) ->
+read_files_and_tables(_Config) ->
     %% tables would be placement & format, both public and retrievable
     %% from an index table by the name of the module. An accessor module
     %% should later be created to abstract this away
@@ -49,7 +49,7 @@ read_files_and_tables(Config) ->
 
 %% Only ".bert" files are inspected -- the rest, even if subscribing to
 %% the BERT format is not visible in tables
-not_bert_ignored(Config) ->
+not_bert_ignored(_Config) ->
     %% A value called 'not_bert' has been inserted in a .not_bert
     %% file under the namespace 'format'. If it's found, we failed.
     %% This test should pass unless bertconf_lib's suite is also failing.
