@@ -1,6 +1,6 @@
 {application, bertconf,
- [{description, "Load configuration from .bert files and load them in ETS tables"},
-  {vsn, "0.3.0"},
+ [{description, "Read configuration from .bert files and load them in ETS tables"},
+  {vsn, "1.0.0"},
   {modules, [bertconf, bertconf_sup, bertconf_lib, bertconf_bert_loader]},
   {registered, []},
   {applications, [kernel, stdlib]},
