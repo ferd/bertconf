@@ -7,7 +7,7 @@
 -include("bertconf.hrl").
 
 -type namespace() :: term().
--opaque version() :: {vsn,term()}.
+-type version() :: {vsn,term()}.
 -export_types([namespace/0, version/0]).
 
 %%% APPLICATION CALLBACKS %%%
