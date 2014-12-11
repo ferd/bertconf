@@ -8,7 +8,7 @@
 
 -type namespace() :: term().
 -opaque version() :: {vsn,term()}.
--export_types([namespace/0, version/0]).
+-export_type([namespace/0, version/0]).
 
 %%% APPLICATION CALLBACKS %%%
 start(normal, _) ->

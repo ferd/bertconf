@@ -28,7 +28,7 @@ inspect(Dir, Refs) ->
     Files = find_bert_files(Dir),
     NewRefs = [begin
                 {ok, Bin} = file:read_file(File),
-                {File, crypto:md5(Bin)}
+                {File, crypto:hash(md5, Bin)}
                end || File <- Files],
     DiffFiles = diff(NewRefs, Refs),
     {DiffFiles, NewRefs}.
